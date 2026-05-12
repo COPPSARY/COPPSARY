@@ -1,0 +1,24 @@
+---
+import PortfolioApp from '../components/PortfolioApp.jsx';
+import { loadPortfolioContent } from '../lib/portfolioContent.js';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const { siteData, experience, education, projects, artwork, contactMethods } =
+  await loadPortfolioContent();
+---
+
+<BaseLayout title={siteData.site.title} description={siteData.site.description}>
+  <PortfolioApp
+    client:load
+    hero={siteData.hero}
+    about={siteData.about}
+    education={education}
+    experience={experience}
+    projectsSection={siteData['projects-section']}
+    projects={projects}
+    artworkSection={siteData['artwork-section']}
+    artwork={artwork}
+    contact={siteData.contact}
+    contactMethods={contactMethods}
+  />
+</BaseLayout>

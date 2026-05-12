@@ -1,0 +1,31 @@
+﻿---
+import PortfolioApp from '../components/PortfolioApp.jsx';
+import { loadPortfolioContent } from '../lib/portfolioContent.js';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const { siteData, experience, education, projects, artwork, contactMethods } =
+  await loadPortfolioContent();
+---
+
+<BaseLayout
+  title="Work - Coppsary Solutions"
+  description="View selected Coppsary website projects and digital execution outcomes for Khmer business owners."
+  canonical="https://coppsary.com/work"
+  keywords="Coppsary work, web projects Cambodia, digital portfolio Khmer business"
+  ogDescription="View selected Coppsary project outcomes and digital craftsmanship for Khmer businesses."
+>
+  <PortfolioApp
+    client:load
+    initialSection="visual-work"
+    hero={siteData.hero}
+    about={siteData.about}
+    education={education}
+    experience={experience}
+    projectsSection={siteData['projects-section']}
+    projects={projects}
+    artworkSection={siteData['artwork-section']}
+    artwork={artwork}
+    contact={siteData.contact}
+    contactMethods={contactMethods}
+  />
+</BaseLayout>

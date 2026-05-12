@@ -1,0 +1,31 @@
+﻿---
+import PortfolioApp from '../components/PortfolioApp.jsx';
+import { loadPortfolioContent } from '../lib/portfolioContent.js';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const { siteData, experience, education, projects, artwork, contactMethods } =
+  await loadPortfolioContent();
+---
+
+<BaseLayout
+  title="Service - Coppsary Solutions"
+  description="Explore Coppsary Solutions services: strategy, UI/UX, React development, and optimization for Khmer businesses."
+  canonical="https://coppsary.com/service"
+  keywords="Coppsary services, website strategy Cambodia, React development Phnom Penh"
+  ogDescription="Explore Coppsary service offerings for trust-focused business websites in Cambodia."
+>
+  <PortfolioApp
+    client:load
+    initialSection="projects"
+    hero={siteData.hero}
+    about={siteData.about}
+    education={education}
+    experience={experience}
+    projectsSection={siteData['projects-section']}
+    projects={projects}
+    artworkSection={siteData['artwork-section']}
+    artwork={artwork}
+    contact={siteData.contact}
+    contactMethods={contactMethods}
+  />
+</BaseLayout>

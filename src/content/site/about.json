@@ -1,0 +1,34 @@
+{
+  "eyebrow": "ABOUT COPPSARY",
+  "intro": "Helping Khmer businesses build trusted digital platforms with clear strategy and reliable execution.",
+  "stats": ["100% Khmer-owned", "150+ pages delivered", "Phnom Penh based"],
+  "paragraphs": [
+    "Coppsary Solutions creates websites for business owners who need stronger branding, clearer messaging, and more customer trust online.",
+    "Our work combines business-first planning, modern interface design, and dependable implementation so websites become a real growth asset, not just a visual brochure."
+  ],
+  "experienceIntro": {
+    "eyebrow": "PROCESS",
+    "title": "How We Deliver",
+    "description": "A practical execution model from discovery to launch and optimization."
+  },
+  "stackIntro": {
+    "eyebrow": "TOOLS",
+    "title": "Technology Stack"
+  },
+  "stack": [
+    "Astro",
+    "React",
+    "JavaScript",
+    "Node.js",
+    "Express",
+    "MongoDB",
+    "Tailwind CSS",
+    "Figma",
+    "Git",
+    "Python",
+    "Flutter",
+    "Java",
+    "Next.js",
+    "Three.js"
+  ]
+}
