@@ -27,3 +27,8 @@ dist-ssr
 .env
 .vercel
 .env*.local
+
+.codex/
+.omx/
+.playwright-mc/
+.agents/

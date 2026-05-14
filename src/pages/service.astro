@@ -1,31 +1,71 @@
-﻿---
-import PortfolioApp from '../components/PortfolioApp.jsx';
-import { loadPortfolioContent } from '../lib/portfolioContent.js';
+---
+import Footer from '../components/site/Footer.astro';
+import Header from '../components/site/Header.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-
-const { siteData, experience, education, projects, artwork, contactMethods } =
-  await loadPortfolioContent();
+import { services } from '../data/aurea.js';
 ---
 
 <BaseLayout
-  title="Service - Coppsary Solutions"
-  description="Explore Coppsary Solutions services: strategy, UI/UX, React development, and optimization for Khmer businesses."
+  title="AUREA Services"
+  description="Explore AUREA service areas across websites, dashboards, automation systems, and custom digital platforms."
   canonical="https://coppsary.com/service"
-  keywords="Coppsary services, website strategy Cambodia, React development Phnom Penh"
-  ogDescription="Explore Coppsary service offerings for trust-focused business websites in Cambodia."
 >
-  <PortfolioApp
-    client:load
-    initialSection="projects"
-    hero={siteData.hero}
-    about={siteData.about}
-    education={education}
-    experience={experience}
-    projectsSection={siteData['projects-section']}
-    projects={projects}
-    artworkSection={siteData['artwork-section']}
-    artwork={artwork}
-    contact={siteData.contact}
-    contactMethods={contactMethods}
-  />
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div class="site-shell grid-lines">
+    <Header pathname={Astro.url.pathname} />
+
+    <main id="main-content">
+      <section class="section-shell">
+        <div class="container-shell section-stack">
+          <span class="eyebrow">Services</span>
+          <div class="split-layout">
+            <div>
+              <h1 class="display-title">A premium agency approach to modern web infrastructure</h1>
+            </div>
+            <p class="section-copy">
+              AUREA is positioned as a website building agency, but our service model is designed to support the deeper
+              systems around business growth: product execution, automation, platforms, and scalable software thinking.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell">
+        <div class="container-shell section-stack">
+          <div class="service-grid">
+            {services.map((service) => (
+              <article class="service-card">
+                <div class="service-card__index">{service.index}</div>
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell">
+        <div class="container-shell section-stack">
+          <div class="mission-grid">
+            <article class="mission-card">
+              <span class="eyebrow">How we think</span>
+              <p class="section-copy" style="margin-top: 1rem; max-width: none;">
+                We focus on cleaner brand presentation, stronger product structure, and systems that do not collapse the
+                moment the business starts growing faster.
+              </p>
+            </article>
+            <article class="mission-card">
+              <span class="eyebrow">What clients get</span>
+              <p class="section-copy" style="margin-top: 1rem; max-width: none;">
+                A more professional digital identity, better launch clarity, and a technical foundation that can evolve
+                into dashboards, automation, content platforms, or custom applications over time.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </div>
 </BaseLayout>

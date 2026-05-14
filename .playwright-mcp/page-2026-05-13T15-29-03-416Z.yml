@@ -1,0 +1,204 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic [ref=e3]:
+    - banner:
+      - generic [ref=e5]:
+        - generic:
+          - banner "Main navigation header":
+            - link "Logo" [ref=e6] [cursor=pointer]:
+              - /url: /
+              - generic [ref=e7]: AUREA
+            - button "Open menu" [ref=e8] [cursor=pointer]:
+              - generic [ref=e10]:
+                - generic [ref=e11]: Menu
+                - generic [ref=e12]: Close
+          - complementary [ref=e16]:
+            - generic [ref=e17]:
+              - list [ref=e18]:
+                - listitem [ref=e19]:
+                  - link [ref=e20] [cursor=pointer]:
+                    - /url: /about
+                    - generic [ref=e21]: Studio
+                - listitem [ref=e22]:
+                  - link [ref=e23] [cursor=pointer]:
+                    - /url: /#projects
+                    - generic [ref=e24]: Work
+                - listitem [ref=e25]:
+                  - link [ref=e26] [cursor=pointer]:
+                    - /url: /#contact
+                    - generic [ref=e27]: Contact
+              - generic [ref=e28]:
+                - heading [level=3] [ref=e29]: Socials
+                - list [ref=e30]:
+                  - listitem [ref=e31]:
+                    - link [ref=e32] [cursor=pointer]:
+                      - /url: https://www.facebook.com/share/18dWrMFCZ2/?mibextid=wwXIfr
+                      - text: Facebook
+                  - listitem [ref=e33]:
+                    - link [ref=e34] [cursor=pointer]:
+                      - /url: https://www.tiktok.com/@aurea.tools?_r=1&_t=ZS-96IvsxPC6bo
+                      - text: TikTok
+    - main [ref=e35]:
+      - generic [ref=e36]:
+        - generic [ref=e37]: (01) Studio
+        - heading "We build digital presences that businesses remember." [level=1] [ref=e38]:
+          - text: We build digital
+          - text: presences that
+          - text: businesses remember.
+        - paragraph [ref=e39]: AUREA is a website development studio at the intersection of design and engineering. We work with businesses, creators, and growing brands who want a digital presence that performs as well as it looks.
+      - generic [ref=e41]:
+        - generic [ref=e42]:
+          - generic [ref=e43]: "4"
+          - generic [ref=e44]: Projects shipped
+        - generic [ref=e45]:
+          - generic [ref=e46]: "6"
+          - generic [ref=e47]: Team members
+        - generic [ref=e48]:
+          - generic [ref=e49]: "'25"
+          - generic [ref=e50]: Year founded
+        - generic [ref=e51]:
+          - generic [ref=e52]: PNH
+          - generic [ref=e53]: Phnom Penh, Cambodia
+      - generic [ref=e54]:
+        - generic [ref=e55]:
+          - generic [ref=e56]: (02) Journey
+          - paragraph [ref=e58]: AUREA did not begin as a finished agency. It began as a search.
+        - generic [ref=e59]:
+          - article [ref=e60]:
+            - generic [ref=e61]: "01"
+            - generic [ref=e62]:
+              - heading "COPPSARY" [level=3] [ref=e63]
+              - paragraph [ref=e64]: COPPSARY was the starting point — where the team explored creative concepts, early product thinking, and the first version of what building digital experiences together could look like.
+          - article [ref=e65]:
+            - generic [ref=e66]: "02"
+            - generic [ref=e67]:
+              - heading "Turing Hackathon" [level=3] [ref=e68]
+              - paragraph [ref=e69]: The hackathon sharpened execution. It pushed ideas into real time, pressure-tested decisions, and made it clear that speed only matters when the result still feels trustworthy.
+          - article [ref=e70]:
+            - generic [ref=e71]: "03"
+            - generic [ref=e72]:
+              - heading "ACTSmart Incubation" [level=3] [ref=e73]
+              - paragraph [ref=e74]: "Incubation added structure. It brought the team closer to real business needs: positioning, clarity, operational reality, and platforms that support growth instead of just looking polished."
+          - article [ref=e75]:
+            - generic [ref=e76]: "04"
+            - generic [ref=e77]:
+              - heading "What we learned" [level=3] [ref=e78]
+              - paragraph [ref=e79]: Most businesses do not only need a better website. They need a stronger digital identity, cleaner systems, and a platform layer that helps them move forward with more confidence.
+      - generic [ref=e80]:
+        - article [ref=e81]:
+          - generic [ref=e82]: (03) Insight
+          - heading "Too many businesses still look less credible online than they are in real life. A weak digital presence quietly erodes trust before a conversation even begins." [level=2] [ref=e84]
+        - article [ref=e85]:
+          - generic [ref=e86]: (04) Insight
+          - 'heading "We kept seeing the same issue: ambitious brands with strong ideas were being represented by outdated websites, fragmented systems, and digital identities that did not match their potential." [level=2] [ref=e88]'
+        - article [ref=e89]:
+          - generic [ref=e90]: (05) Insight
+          - heading "Modern businesses need platforms that feel fast, clear, and professional. When the digital layer is weak, growth slows, trust drops, and opportunities leak out at the edges." [level=2] [ref=e92]
+      - generic [ref=e93]:
+        - generic [ref=e94]:
+          - generic [ref=e95]: (06) Direction
+          - paragraph [ref=e97]: More disciplined. More strategic. More durable.
+        - generic [ref=e98]:
+          - article [ref=e99]:
+            - heading "Faster launch cycles" [level=3] [ref=e101]
+            - paragraph [ref=e102]: More deliberate systems make it easier to launch with less friction and fewer rebuilds.
+          - article [ref=e103]:
+            - heading "Better digital trust" [level=3] [ref=e105]
+            - paragraph [ref=e106]: A stronger online presence helps brands look as serious as the work they actually do.
+          - article [ref=e107]:
+            - heading "Scalable systems" [level=3] [ref=e109]
+            - paragraph [ref=e110]: The foundation is built to support platforms, automation, dashboards, and future expansion.
+          - article [ref=e111]:
+            - heading "Long-term growth focus" [level=3] [ref=e113]
+            - paragraph [ref=e114]: AUREA is designed around what holds up as the business gets bigger, not just what looks good today.
+      - generic [ref=e115]:
+        - article [ref=e116]:
+          - generic [ref=e117]: (07) Mission
+          - paragraph [ref=e118]: Create modern digital platforms that help businesses build trust, grow faster, and stand out online.
+        - article [ref=e119]:
+          - generic [ref=e120]: (08) Vision
+          - paragraph [ref=e121]: Empower businesses and creators to fully own their digital presence with systems that feel precise, scalable, and lasting.
+      - generic [ref=e122]:
+        - generic [ref=e123]:
+          - generic [ref=e124]: (09) Long-Term
+          - paragraph [ref=e126]: Scalable ecosystems. Creative engineering. Modern infrastructure.
+        - generic [ref=e127]:
+          - article [ref=e128]:
+            - heading "Scalable digital ecosystems" [level=3] [ref=e130]
+            - paragraph [ref=e131]: We are moving beyond isolated website launches toward connected digital environments that can support brands over time.
+          - article [ref=e132]:
+            - heading "Creative engineering" [level=3] [ref=e134]
+            - paragraph [ref=e135]: The studio is being shaped around the overlap between strong visual identity and technical systems that genuinely perform.
+          - article [ref=e136]:
+            - heading "Automation and intelligent infrastructure" [level=3] [ref=e138]
+            - paragraph [ref=e139]: Long term, AUREA is building toward automation, platform development, and modern business infrastructure that removes friction instead of adding more tools.
+      - generic [ref=e140]:
+        - generic [ref=e141]:
+          - generic [ref=e142]: (04) Team
+          - paragraph [ref=e144]: Six people. One standard.
+        - generic [ref=e145]:
+          - article [ref=e146]:
+            - generic [ref=e147]:
+              - img "Kao Sodavann" [ref=e148]
+              - paragraph [ref=e150]: Bridging creative direction and technical execution to shape the studio’s digital voice.
+            - generic [ref=e151]:
+              - heading "Kao Sodavann" [level=3] [ref=e152]
+              - generic [ref=e153]: Founder
+          - article [ref=e154]:
+            - generic [ref=e155]:
+              - img "Prom Sereyreaksa" [ref=e156]
+              - paragraph [ref=e158]: Focused on product thinking, interface craft, and building systems that feel intentional.
+            - generic [ref=e159]:
+              - heading "Prom Sereyreaksa" [level=3] [ref=e160]
+              - generic [ref=e161]: Co-Founder
+          - article [ref=e162]:
+            - generic [ref=e163]:
+              - img "Chea Ilong" [ref=e164]
+              - paragraph [ref=e166]: Designing the architecture, APIs, and logic that make platforms dependable at scale.
+            - generic [ref=e167]:
+              - heading "Chea Ilong" [level=3] [ref=e168]
+              - generic [ref=e169]: Backend Developer
+          - article [ref=e170]:
+            - generic [ref=e171]:
+              - img "Kosal Sophanith" [ref=e172]
+              - paragraph [ref=e174]: Turning visual direction into precise, responsive interfaces with a premium finish.
+            - generic [ref=e175]:
+              - heading "Kosal Sophanith" [level=3] [ref=e176]
+              - generic [ref=e177]: Frontend Developer
+          - article [ref=e178]:
+            - generic [ref=e179]:
+              - img "Huy Visa" [ref=e180]
+              - paragraph [ref=e182]: Connecting business context to product decisions so digital systems stay useful and grounded.
+            - generic [ref=e183]:
+              - heading "Huy Visa" [level=3] [ref=e184]
+              - generic [ref=e185]: Business Analyst
+          - article [ref=e186]:
+            - generic [ref=e187]:
+              - img "Chheang Sovanpanha" [ref=e188]
+              - paragraph [ref=e190]: Contributing product strategy, research clarity, and operational structure across studio work.
+            - generic [ref=e191]:
+              - heading "Chheang Sovanpanha" [level=3] [ref=e192]
+              - generic [ref=e193]: Business Analyst
+      - generic [ref=e196]:
+        - generic [ref=e197]: (10) Contact
+        - heading "Let's build something worth arriving at." [level=2] [ref=e198]
+        - link "prumsereyreaksa@gmail.com" [ref=e199] [cursor=pointer]:
+          - /url: mailto:prumsereyreaksa@gmail.com
+    - contentinfo [ref=e200]:
+      - generic [ref=e201]:
+        - generic [ref=e202]: © AUREA / 2026
+        - navigation "Footer navigation" [ref=e203]:
+          - link "Work" [ref=e204] [cursor=pointer]:
+            - /url: /#projects
+          - link "Studio" [ref=e205] [cursor=pointer]:
+            - /url: /about
+          - link "Contact" [ref=e206] [cursor=pointer]:
+            - /url: /#contact
+        - generic "Social links" [ref=e207]:
+          - link "AUREA Facebook" [ref=e208] [cursor=pointer]:
+            - /url: https://www.facebook.com/share/18dWrMFCZ2/?mibextid=wwXIfr
+            - img [ref=e209]
+          - link "AUREA TikTok" [ref=e211] [cursor=pointer]:
+            - /url: https://www.tiktok.com/@aurea.tools?_r=1&_t=ZS-96IvsxPC6bo
+            - img [ref=e212]

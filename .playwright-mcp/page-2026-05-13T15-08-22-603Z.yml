@@ -1,0 +1,210 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic [ref=e3]:
+    - banner:
+      - generic [ref=e5]:
+        - generic:
+          - banner "Main navigation header":
+            - link "Logo" [ref=e6] [cursor=pointer]:
+              - /url: /
+              - generic [ref=e7]: AUREA
+            - button "Open menu" [ref=e8] [cursor=pointer]:
+              - generic [ref=e10]:
+                - generic [ref=e11]: Menu
+                - generic [ref=e12]: Close
+          - complementary [ref=e16]:
+            - generic [ref=e17]:
+              - list [ref=e18]:
+                - listitem [ref=e19]:
+                  - link [ref=e20] [cursor=pointer]:
+                    - /url: /about
+                    - generic [ref=e21]: Studio
+                - listitem [ref=e22]:
+                  - link [ref=e23] [cursor=pointer]:
+                    - /url: /#projects
+                    - generic [ref=e24]: Work
+                - listitem [ref=e25]:
+                  - link [ref=e26] [cursor=pointer]:
+                    - /url: /#contact
+                    - generic [ref=e27]: Contact
+              - generic [ref=e28]:
+                - heading [level=3] [ref=e29]: Socials
+                - list [ref=e30]:
+                  - listitem [ref=e31]:
+                    - link [ref=e32] [cursor=pointer]:
+                      - /url: https://www.facebook.com/share/18dWrMFCZ2/?mibextid=wwXIfr
+                      - text: Facebook
+                  - listitem [ref=e33]:
+                    - link [ref=e34] [cursor=pointer]:
+                      - /url: https://www.tiktok.com/@aurea.tools?_r=1&_t=ZS-96IvsxPC6bo
+                      - text: TikTok
+    - main [ref=e35]:
+      - generic [ref=e37]:
+        - generic [ref=e40]:
+          - generic [ref=e41]: Creative Website Development Studio — Est. 2025
+          - heading "We build digital presences that elevate business." [level=1] [ref=e42]
+          - link "See Our Work ↓" [ref=e44] [cursor=pointer]:
+            - /url: /#projects
+        - generic:
+          - generic:
+            - generic: AUREA
+      - generic [ref=e45]:
+        - generic [ref=e46]:
+          - generic [ref=e47]: (01) Studio
+          - paragraph [ref=e49]: AUREA builds websites at the intersection of design and engineering. We work with businesses that want a digital presence that performs as well as it looks.
+        - generic [ref=e51]: Phnom Penh, Cambodia
+      - generic [ref=e52]:
+        - generic [ref=e53]:
+          - generic [ref=e54]: (02) Services
+          - paragraph [ref=e56]: Everything your digital presence needs. Nothing it doesn't.
+        - generic [ref=e57]:
+          - article [ref=e58]:
+            - img [ref=e61]
+            - generic [ref=e63]: "01"
+            - heading "Static Websites" [level=3] [ref=e64]
+            - paragraph [ref=e65]: Fast, clean, conversion-ready.
+          - article [ref=e66]:
+            - img [ref=e69]
+            - generic [ref=e71]: "02"
+            - heading "Business Websites" [level=3] [ref=e72]
+            - paragraph [ref=e73]: Systems built to grow with you.
+          - article [ref=e74]:
+            - img [ref=e77]
+            - generic [ref=e79]: "03"
+            - heading "Custom Platforms" [level=3] [ref=e80]
+            - paragraph [ref=e81]: Engineered from first principles.
+          - article [ref=e82]:
+            - img [ref=e85]
+            - generic [ref=e87]: "04"
+            - heading "Automation Systems" [level=3] [ref=e88]
+            - paragraph [ref=e89]: Logic that works while you sleep.
+      - generic [ref=e90]:
+        - generic [ref=e91]:
+          - generic [ref=e92]: (03) Work
+          - paragraph [ref=e94]: Selected projects. Real businesses. Real results.
+        - generic [ref=e95]:
+          - article [ref=e96]:
+            - link "Coppseries Commerce" [ref=e97] [cursor=pointer]:
+              - /url: https://coppseries.netlify.app/
+              - generic [ref=e99]:
+                - generic [ref=e100]: Coppseries
+                - generic [ref=e101]: Commerce
+          - article [ref=e102]:
+            - link "LeakScope Security Live" [ref=e103] [cursor=pointer]:
+              - /url: https://www.leakscope.tech/
+              - generic [ref=e105]:
+                - generic [ref=e106]: LeakScope
+                - generic [ref=e107]: Security
+              - generic [ref=e108]: Live
+          - article [ref=e109]:
+            - link "PhsarDesign Marketplace" [ref=e110] [cursor=pointer]:
+              - /url: https://phsardesign.vercel.app/
+              - generic [ref=e112]:
+                - generic [ref=e113]: PhsarDesign
+                - generic [ref=e114]: Marketplace
+          - article [ref=e115]:
+            - link "AUREA Tools Creator product" [ref=e116] [cursor=pointer]:
+              - /url: https://www.aurea.tools/
+              - generic [ref=e118]:
+                - generic [ref=e119]: AUREA Tools
+                - generic [ref=e120]: Creator product
+      - generic [ref=e121]:
+        - generic [ref=e122]:
+          - generic [ref=e123]: (04) Philosophy
+          - paragraph [ref=e125]: Statements that shape how we build.
+        - generic [ref=e126]:
+          - article [ref=e127]:
+            - generic [ref=e128]: (01)
+            - heading "We design systems that build trust." [level=2] [ref=e130]
+          - article [ref=e131]:
+            - generic [ref=e132]: (02)
+            - heading "A website is your most permanent sales rep." [level=2] [ref=e134]
+          - article [ref=e135]:
+            - generic [ref=e136]: (03)
+            - heading "Clarity creates conversion." [level=2] [ref=e138]
+          - article [ref=e139]:
+            - generic [ref=e140]: (04)
+            - heading "Craft is the strategy." [level=2] [ref=e142]
+      - generic [ref=e143]:
+        - generic [ref=e144]:
+          - generic [ref=e145]: (04) Team
+          - paragraph [ref=e147]: Six people. One standard.
+        - generic [ref=e148]:
+          - article [ref=e149]:
+            - generic [ref=e150]:
+              - img "Kao Sodavann" [ref=e151]
+              - paragraph [ref=e153]: Bridging creative direction and technical execution to shape the studio’s digital voice.
+            - generic [ref=e154]:
+              - heading "Kao Sodavann" [level=3] [ref=e155]
+              - generic [ref=e156]: Founder
+          - article [ref=e157]:
+            - generic [ref=e158]:
+              - img "Prom Sereyreaksa" [ref=e159]
+              - paragraph [ref=e161]: Focused on product thinking, interface craft, and building systems that feel intentional.
+            - generic [ref=e162]:
+              - heading "Prom Sereyreaksa" [level=3] [ref=e163]
+              - generic [ref=e164]: Co-Founder
+          - article [ref=e165]:
+            - generic [ref=e166]:
+              - img "Chea Ilong" [ref=e167]
+              - paragraph [ref=e169]: Designing the architecture, APIs, and logic that make platforms dependable at scale.
+            - generic [ref=e170]:
+              - heading "Chea Ilong" [level=3] [ref=e171]
+              - generic [ref=e172]: Backend Developer
+          - article [ref=e173]:
+            - generic [ref=e174]:
+              - img "Kosal Sophanith" [ref=e175]
+              - paragraph [ref=e177]: Turning visual direction into precise, responsive interfaces with a premium finish.
+            - generic [ref=e178]:
+              - heading "Kosal Sophanith" [level=3] [ref=e179]
+              - generic [ref=e180]: Frontend Developer
+          - article [ref=e181]:
+            - generic [ref=e182]:
+              - img "Huy Visa" [ref=e183]
+              - paragraph [ref=e185]: Connecting business context to product decisions so digital systems stay useful and grounded.
+            - generic [ref=e186]:
+              - heading "Huy Visa" [level=3] [ref=e187]
+              - generic [ref=e188]: Business Analyst
+          - article [ref=e189]:
+            - generic [ref=e190]:
+              - img "Chheang Sovanpanha" [ref=e191]
+              - paragraph [ref=e193]: Contributing product strategy, research clarity, and operational structure across studio work.
+            - generic [ref=e194]:
+              - heading "Chheang Sovanpanha" [level=3] [ref=e195]
+              - generic [ref=e196]: Business Analyst
+      - generic [ref=e199]:
+        - generic [ref=e200]: (06) Contact
+        - heading "Let's build something worth arriving at." [level=2] [ref=e201]
+        - link "prumsereyreaksa@gmail.com" [ref=e202] [cursor=pointer]:
+          - /url: mailto:prumsereyreaksa@gmail.com
+    - contentinfo [ref=e203]:
+      - generic [ref=e204]:
+        - generic [ref=e205]: © AUREA / 2026
+        - navigation "Footer navigation" [ref=e206]:
+          - link "Work" [ref=e207] [cursor=pointer]:
+            - /url: /#projects
+          - link "Studio" [ref=e208] [cursor=pointer]:
+            - /url: /about
+          - link "Contact" [ref=e209] [cursor=pointer]:
+            - /url: /#contact
+        - generic "Social links" [ref=e210]:
+          - link "AUREA Facebook" [ref=e211] [cursor=pointer]:
+            - /url: https://www.facebook.com/share/18dWrMFCZ2/?mibextid=wwXIfr
+            - img [ref=e212]
+          - link "AUREA TikTok" [ref=e214] [cursor=pointer]:
+            - /url: https://www.tiktok.com/@aurea.tools?_r=1&_t=ZS-96IvsxPC6bo
+            - img [ref=e215]
+  - generic [ref=e219]:
+    - button "Menu" [ref=e220]:
+      - img [ref=e222]
+      - generic: Menu
+    - button "Inspect" [ref=e226]:
+      - img [ref=e228]
+      - generic: Inspect
+    - button "Audit" [ref=e230]:
+      - img [ref=e232]
+      - generic: Audit
+    - button "Settings" [ref=e235]:
+      - img [ref=e237]
+      - generic: Settings

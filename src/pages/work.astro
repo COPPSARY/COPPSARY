@@ -1,31 +1,110 @@
-﻿---
-import PortfolioApp from '../components/PortfolioApp.jsx';
-import { loadPortfolioContent } from '../lib/portfolioContent.js';
+---
+import Footer from '../components/site/Footer.astro';
+import Header from '../components/site/Header.astro';
+import SmoothScroll from '../components/site/SmoothScroll.jsx';
 import BaseLayout from '../layouts/BaseLayout.astro';
-
-const { siteData, experience, education, projects, artwork, contactMethods } =
-  await loadPortfolioContent();
+import { projects, contactDetails } from '../data/aurea.js';
 ---
 
 <BaseLayout
-  title="Work - Coppsary Solutions"
-  description="View selected Coppsary website projects and digital execution outcomes for Khmer business owners."
+  title="Work — AUREA"
+  description="Selected AUREA projects across e-commerce, security tooling, creative platforms, and creator products."
   canonical="https://coppsary.com/work"
-  keywords="Coppsary work, web projects Cambodia, digital portfolio Khmer business"
-  ogDescription="View selected Coppsary project outcomes and digital craftsmanship for Khmer businesses."
 >
-  <PortfolioApp
-    client:load
-    initialSection="visual-work"
-    hero={siteData.hero}
-    about={siteData.about}
-    education={education}
-    experience={experience}
-    projectsSection={siteData['projects-section']}
-    projects={projects}
-    artworkSection={siteData['artwork-section']}
-    artwork={artwork}
-    contact={siteData.contact}
-    contactMethods={contactMethods}
-  />
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div class="site-shell">
+    <SmoothScroll client:load />
+    <Header pathname={Astro.url.pathname} />
+
+    <main id="main-content">
+
+      <section class="work-page__hero section-shell">
+        <div class="work-page__hero-inner">
+          <span class="eyebrow">Selected work — {projects.length} projects</span>
+          <h1 class="display-title work-page__headline">Work that<br/>earns its place<br/>online.</h1>
+          <p class="work-page__hero-copy">
+            Commerce platforms, developer tools, creative marketplaces, and creator products.
+            Each one built to look serious, perform well, and represent the brand behind it.
+          </p>
+        </div>
+      </section>
+
+      <div class="work-page__list">
+        {projects.map((project, index) => (
+          <article class={`work-row${index % 2 === 1 ? ' work-row--alt' : ''}`}>
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noreferrer"
+              class={`work-row__media${project.video ? ' work-row__media--video' : ''}`}
+              aria-label={`Visit ${project.title}`}
+            >
+              {project.video ? (
+                <video
+                  src={project.video}
+                  autoplay
+                  muted={true}
+                  loop
+                  playsinline
+                  preload="none"
+                />
+              ) : (
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  loading="lazy"
+                  decoding="async"
+                />
+              )}
+              <div class="work-row__media-veil" aria-hidden="true"></div>
+            </a>
+
+            <div class="work-row__info">
+              <span class="work-row__number">0{index + 1} /</span>
+              <h2 class="work-row__title">{project.title}</h2>
+              <p class="work-row__desc">{project.description}</p>
+              <div class="work-row__tags">
+                {project.tags?.map(tag => <span class="work-row__tag">{tag}</span>)}
+              </div>
+              <a href={project.url} target="_blank" rel="noreferrer" class="work-row__cta">
+                Visit project <span aria-hidden="true">↗</span>
+              </a>
+              {project.live && <span class="work-row__live-badge">Live</span>}
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <section class="contact-section">
+        <div class="contact-section__dot" aria-hidden="true"></div>
+        <div class="contact-section__content">
+          <div class="section-label section-label--dark">(05) Start a project</div>
+          <h2>{contactDetails.headline}</h2>
+          <div class="contact-section__links" aria-label="Direct contact links">
+            <a href={contactDetails.email} class="contact-section__link">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 6h16v12H4z"></path>
+                <path d="m4 7 8 6 8-6"></path>
+              </svg>
+              {contactDetails.emailLabel}
+            </a>
+            <a href={contactDetails.telegram} target="_blank" rel="noreferrer" class="contact-section__link">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                <path d="M21.4 4.6c.3-.9-.6-1.7-1.5-1.4L3.8 9.4c-1 .4-1 1.8.1 2.1l4.1 1.3 1.6 5c.3 1 1.6 1.1 2.1.2l2.3-3.2 4.4 3.3c.8.6 1.9.2 2.1-.8l.9-12.7ZM9.1 12.1l8.4-5.2-6.9 6.7-.3 2.7-1.2-4.2Z"></path>
+              </svg>
+              {contactDetails.telegramLabel}
+            </a>
+            <a href={contactDetails.phone} class="contact-section__link">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7l.5 3a2 2 0 0 1-.6 1.8l-1.3 1.3a16 16 0 0 0 6.4 6.4l1.3-1.3a2 2 0 0 1 1.8-.6l3 .5A2 2 0 0 1 22 16.9z"></path>
+              </svg>
+              {contactDetails.phoneLabel}
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </div>
 </BaseLayout>

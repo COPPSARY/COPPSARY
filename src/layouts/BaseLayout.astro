@@ -1,18 +1,56 @@
 ---
 import '../index.css';
 import '../App.css';
+import { siteMeta } from '../data/aurea.js';
 
 const {
-  title = 'Coppsary Solutions - Digital Craftsmanship for Cambodia',
-  description = 'Coppsary Solutions builds modern, reliable websites for Khmer business owners.',
-  canonical = 'https://coppsary.com/',
+  title = `${siteMeta.name} — ${siteMeta.role}`,
+  description = siteMeta.description,
+  canonical = `${siteMeta.url}/`,
   ogTitle = title,
   ogDescription = description,
-  ogImage = 'https://coppsary.com/COPPSARY.jpg',
+  ogImage = siteMeta.ogImage,
   ogType = 'website',
   robots = 'index, follow',
-  keywords = 'Coppsary Solutions, Cambodia web agency, website design Phnom Penh, Khmer business websites, React web development',
+  keywords = 'AUREA, software development studio, web development studio, custom web applications, automation systems, business websites, Phnom Penh software studio',
+  imageAlt = `${siteMeta.name} website preview`,
 } = Astro.props;
+
+const normalizedCanonical = canonical.endsWith('/') ? canonical : `${canonical}`;
+const pageJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: ogTitle,
+  description: ogDescription,
+  url: normalizedCanonical,
+  isPartOf: {
+    '@type': 'WebSite',
+    name: siteMeta.name,
+    url: siteMeta.url,
+  },
+};
+
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: siteMeta.name,
+  url: siteMeta.url,
+  description: siteMeta.description,
+  logo: siteMeta.ogImage,
+  email: siteMeta.email,
+  telephone: siteMeta.phone,
+  foundingDate: '2025',
+  founders: siteMeta.founders.map((name) => ({
+    '@type': 'Person',
+    name,
+  })),
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: siteMeta.addressLocality,
+    addressCountry: siteMeta.addressCountry,
+  },
+  sameAs: [siteMeta.facebook, siteMeta.tiktok],
+};
 ---
 
 <!doctype html>
@@ -24,25 +62,48 @@ const {
     <meta name="title" content={title} />
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
-    <meta name="author" content="Coppsary Solutions" />
+    <meta name="author" content="AUREA" />
     <meta name="robots" content={robots} />
     <link rel="canonical" href={canonical} />
+    <meta name="theme-color" content="#0A64BC" />
+    <meta name="format-detection" content="telephone=no" />
 
     <meta property="og:type" content={ogType} />
     <meta property="og:url" content={canonical} />
     <meta property="og:title" content={ogTitle} />
     <meta property="og:description" content={ogDescription} />
     <meta property="og:image" content={ogImage} />
-    <meta property="og:site_name" content="Coppsary Solutions" />
+    <meta property="og:image:alt" content={imageAlt} />
+    <meta property="og:site_name" content="AUREA" />
+    <meta property="og:locale" content={siteMeta.locale} />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={ogTitle} />
     <meta name="twitter:description" content={ogDescription} />
     <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={imageAlt} />
+    <link rel="preload" href="/coolvetica/Coolvetica Rg.otf" as="font" type="font/otf" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght@8..144,75..125,100..900&display=swap" rel="stylesheet" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" sizes="any" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.json" />
+    <script type="application/ld+json" set:html={JSON.stringify(organizationJsonLd)}></script>
+    <script type="application/ld+json" set:html={JSON.stringify(pageJsonLd)}></script>
+    <script is:inline>
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+
+      const resetScrollPosition = () => {
+        if (window.location.hash) return;
+        window.scrollTo(0, 0);
+        requestAnimationFrame(() => window.scrollTo(0, 0));
+      };
+
+      window.addEventListener('load', resetScrollPosition, { once: true });
+      window.addEventListener('pageshow', resetScrollPosition);
+    </script>
   </head>
   <body>
     <slot />

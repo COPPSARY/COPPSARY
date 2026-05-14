@@ -1,27 +1,33 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "type": "object",
-  "properties": {
-    "order": {
-      "type": "number"
-    },
-    "src": {
-      "type": "string"
-    },
-    "title": {
-      "type": "string"
-    },
-    "category": {
-      "type": "string"
-    },
-    "$schema": {
-      "type": "string"
+  "$ref": "#/definitions/artwork",
+  "definitions": {
+    "artwork": {
+      "type": "object",
+      "properties": {
+        "order": {
+          "type": "number"
+        },
+        "src": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "order",
+        "src",
+        "title",
+        "category"
+      ],
+      "additionalProperties": false
     }
   },
-  "required": [
-    "order",
-    "src",
-    "title",
-    "category"
-  ]
+  "$schema": "http://json-schema.org/draft-07/schema#"
 }

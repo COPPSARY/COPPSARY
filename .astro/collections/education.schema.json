@@ -1,27 +1,33 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "type": "object",
-  "properties": {
-    "order": {
-      "type": "number"
-    },
-    "degree": {
-      "type": "string"
-    },
-    "school": {
-      "type": "string"
-    },
-    "years": {
-      "type": "string"
-    },
-    "$schema": {
-      "type": "string"
+  "$ref": "#/definitions/education",
+  "definitions": {
+    "education": {
+      "type": "object",
+      "properties": {
+        "order": {
+          "type": "number"
+        },
+        "degree": {
+          "type": "string"
+        },
+        "school": {
+          "type": "string"
+        },
+        "years": {
+          "type": "string"
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "order",
+        "degree",
+        "school",
+        "years"
+      ],
+      "additionalProperties": false
     }
   },
-  "required": [
-    "order",
-    "degree",
-    "school",
-    "years"
-  ]
+  "$schema": "http://json-schema.org/draft-07/schema#"
 }

@@ -1,0 +1,58 @@
+---
+const { pathname = '/' } = Astro.props;
+
+const navItems = [
+  { label: 'Studio', href: '/about' },
+  { label: 'Projects', href: '/projects' },
+  { label: 'Team', href: '/team' },
+];
+
+const isActive = (href) => {
+  if (href === '/') return pathname === '/';
+  if (href.startsWith('/#')) return pathname === '/';
+  return pathname === href || pathname.startsWith(`${href}/`);
+};
+---
+
+<header class="site-header" data-site-header>
+  <div class="site-header__inner">
+    <div class="site-navbar">
+      <a href="/" class="site-navbar__brand" aria-label="AUREA home">
+        AUREA
+      </a>
+
+      <nav class="site-navbar__nav" aria-label="Primary navigation">
+        {navItems.map((item) => (
+          <a
+            href={item.href}
+            class={`site-navbar__link${isActive(item.href) ? ' site-navbar__link--active' : ''}`}
+            aria-current={isActive(item.href) ? 'page' : undefined}
+          >
+            {item.label}
+          </a>
+        ))}
+      </nav>
+    </div>
+  </div>
+</header>
+
+<script>
+  const header = document.querySelector('[data-site-header]');
+  if (header) {
+    const update = () => {
+      const headerH = header.getBoundingClientRect().height || 80;
+      const dark = document.querySelectorAll('[data-header-dark]');
+      let onDark = false;
+      dark.forEach((el) => {
+        const r = el.getBoundingClientRect();
+        if (r.top <= headerH * 0.5 && r.bottom >= headerH * 0.5) {
+          onDark = true;
+        }
+      });
+      header.classList.toggle('site-header--on-dark', onDark);
+    };
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+  }
+</script>

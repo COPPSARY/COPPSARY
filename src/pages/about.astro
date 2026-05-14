@@ -1,31 +1,204 @@
-﻿---
-import PortfolioApp from '../components/PortfolioApp.jsx';
-import { loadPortfolioContent } from '../lib/portfolioContent.js';
+---
+import Footer from '../components/site/Footer.astro';
+import Header from '../components/site/Header.astro';
+import SmoothScroll from '../components/site/SmoothScroll.jsx';
 import BaseLayout from '../layouts/BaseLayout.astro';
-
-const { siteData, experience, education, projects, artwork, contactMethods } =
-  await loadPortfolioContent();
+import {
+  aboutInsight,
+  contactDetails,
+  highlights,
+  longTermDirection,
+  missionVision,
+} from '../data/aurea.js';
 ---
 
 <BaseLayout
-  title="About - Coppsary Solutions"
-  description="Learn about Coppsary Solutions, a Khmer-owned web agency focused on trust-driven digital execution for local business growth."
+  title="Studio — AUREA"
+  description="Learn how AUREA grew from COPPSARY into a website development studio shaped by design, engineering, and real business needs."
   canonical="https://coppsary.com/about"
-  keywords="Coppsary Solutions about, Cambodia web agency, Khmer business websites, digital trust"
-  ogDescription="Learn about Coppsary Solutions and our mission to build reliable digital platforms for Khmer businesses."
 >
-  <PortfolioApp
-    client:load
-    initialSection="about"
-    hero={siteData.hero}
-    about={siteData.about}
-    education={education}
-    experience={experience}
-    projectsSection={siteData['projects-section']}
-    projects={projects}
-    artworkSection={siteData['artwork-section']}
-    artwork={artwork}
-    contact={siteData.contact}
-    contactMethods={contactMethods}
-  />
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div class="site-shell">
+    <SmoothScroll client:load />
+    <Header pathname={Astro.url.pathname} />
+
+    <main id="main-content" class="about-page">
+
+      <!-- Hero -->
+      <section class="about-page__hero section-shell">
+        <div class="section-label">(01) Studio</div>
+        <h1>Software built<br/>to move businesses<br/>forward.</h1>
+        <p>
+          AUREA is a software and web development studio based in Phnom Penh.
+          We work with businesses and startups that need platforms built properly —
+          engineered for real use, not just to look good in a mockup.
+        </p>
+      </section>
+
+      <!-- Intro facts strip -->
+      <div class="about-page__intro">
+        <div class="about-page__intro-text">
+          <div class="section-label">(02) Background</div>
+          <p>
+            AUREA grew out of COPPSARY — a small team exploring ideas at the edge of software
+            and product development. From a hackathon sprint to an incubation programme, we
+            understood what businesses actually need: reliable systems, useful data, and platforms
+            built to support real growth.
+          </p>
+          <p>
+            Today we build full-stack web applications, data systems, and automation tools for
+            startups and businesses that take their software seriously.
+          </p>
+        </div>
+      </div>
+
+      <!-- Journey -->
+      <section class="about-page__chapter section-shell">
+        <div class="section-heading">
+          <div class="section-label">(03) Journey</div>
+          <div class="section-heading__content">
+            <p class="section-statement">AUREA did not begin as a finished agency. It began as a search.</p>
+          </div>
+        </div>
+
+        <div class="chapter-flow__list">
+          <article class="chapter-flow__item">
+            <div class="chapter-flow__number">01</div>
+            <div class="chapter-flow__content">
+              <h3>COPPSARY</h3>
+              <p>
+                COPPSARY was the starting point — where the team explored creative concepts, early product
+                thinking, and the first version of what building digital experiences together could look like.
+              </p>
+            </div>
+          </article>
+          <article class="chapter-flow__item">
+            <div class="chapter-flow__number">02</div>
+            <div class="chapter-flow__content">
+              <h3>Turing Hackathon</h3>
+              <p>
+                The hackathon sharpened execution. It pushed ideas into real time, pressure-tested decisions,
+                and made it clear that speed only matters when the result still feels trustworthy.
+              </p>
+            </div>
+          </article>
+          <article class="chapter-flow__item">
+            <div class="chapter-flow__number">03</div>
+            <div class="chapter-flow__content">
+              <h3>ACTSmart Incubation</h3>
+              <p>
+                Incubation added structure. It brought the team closer to real business needs: positioning,
+                clarity, operational reality, and platforms that support growth instead of just looking polished.
+              </p>
+            </div>
+          </article>
+          <article class="chapter-flow__item">
+            <div class="chapter-flow__number">04</div>
+            <div class="chapter-flow__content">
+              <h3>What we learned</h3>
+              <p>
+                Most businesses do not only need a better website. They need a stronger digital identity,
+                cleaner systems, and a platform layer that helps them move forward with more confidence.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Insight posters -->
+      <section class="about-page__insight">
+        {aboutInsight.map((item, index) => (
+          <article class={`philosophy-poster philosophy-poster--${(index % 2) + 1}`}>
+            <div class="section-label section-label--poster">(0{index + 4}) Insight</div>
+            <div class="philosophy-poster__rule" aria-hidden="true"></div>
+            <h2>{item}</h2>
+          </article>
+        ))}
+      </section>
+
+      <!-- Direction -->
+      <section class="about-page__chapter section-shell">
+        <div class="section-heading">
+          <div class="section-label">(07) Direction</div>
+          <div class="section-heading__content">
+            <p class="section-statement">More disciplined. More strategic. More durable.</p>
+          </div>
+        </div>
+
+        <div class="services-grid services-grid--narrow">
+          {highlights.map((item) => (
+            <article class="service-block">
+              <div class="service-block__rule" aria-hidden="true"></div>
+              <h3>{item.title}</h3>
+              <p>{item.copy}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <!-- Mission / Vision -->
+      <section class="about-page__mission section-shell">
+        <article class="mission-panel mission-panel--dark">
+          <span class="section-label section-label--dark">(08) Mission</span>
+          <p>{missionVision[0].copy}</p>
+        </article>
+        <article class="mission-panel">
+          <span class="section-label">(09) Vision</span>
+          <p>{missionVision[1].copy}</p>
+        </article>
+      </section>
+
+      <!-- Long-term direction -->
+      <section class="about-page__chapter section-shell">
+        <div class="section-heading">
+          <div class="section-label">(10) Long-Term</div>
+          <div class="section-heading__content">
+            <p class="section-statement">Scalable ecosystems. Creative engineering. Modern infrastructure.</p>
+          </div>
+        </div>
+
+        <div class="services-grid services-grid--narrow">
+          {longTermDirection.map((item) => (
+            <article class="service-block">
+              <div class="service-block__rule" aria-hidden="true"></div>
+              <h3>{item.title}</h3>
+              <p>{item.copy}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="contact-section">
+        <div class="contact-section__dot" aria-hidden="true"></div>
+        <div class="contact-section__content">
+          <div class="section-label section-label--dark">(11) Contact</div>
+          <h2>{contactDetails.headline}</h2>
+          <div class="contact-section__links" aria-label="Direct contact links">
+            <a href={contactDetails.email} class="contact-section__link">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 6h16v12H4z"></path>
+                <path d="m4 7 8 6 8-6"></path>
+              </svg>
+              {contactDetails.emailLabel}
+            </a>
+            <a href={contactDetails.telegram} target="_blank" rel="noreferrer" class="contact-section__link">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                <path d="M21.4 4.6c.3-.9-.6-1.7-1.5-1.4L3.8 9.4c-1 .4-1 1.8.1 2.1l4.1 1.3 1.6 5c.3 1 1.6 1.1 2.1.2l2.3-3.2 4.4 3.3c.8.6 1.9.2 2.1-.8l.9-12.7ZM9.1 12.1l8.4-5.2-6.9 6.7-.3 2.7-1.2-4.2Z"></path>
+              </svg>
+              {contactDetails.telegramLabel}
+            </a>
+            <a href={contactDetails.phone} class="contact-section__link">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7l.5 3a2 2 0 0 1-.6 1.8l-1.3 1.3a16 16 0 0 0 6.4 6.4l1.3-1.3a2 2 0 0 1 1.8-.6l3 .5A2 2 0 0 1 22 16.9z"></path>
+              </svg>
+              {contactDetails.phoneLabel}
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </div>
 </BaseLayout>

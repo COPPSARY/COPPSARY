@@ -1,0 +1,142 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic [ref=e3]:
+    - banner:
+      - generic [ref=e5]:
+        - generic:
+          - banner "Main navigation header":
+            - link "Logo" [ref=e6] [cursor=pointer]:
+              - /url: /
+              - generic [ref=e7]: AUREA
+            - button "Open menu" [ref=e8] [cursor=pointer]:
+              - generic [ref=e10]:
+                - generic [ref=e11]: Menu
+                - generic [ref=e12]: Close
+          - complementary [ref=e16]:
+            - generic [ref=e17]:
+              - list [ref=e18]:
+                - listitem [ref=e19]:
+                  - link [ref=e20] [cursor=pointer]:
+                    - /url: /about
+                    - generic [ref=e21]: Studio
+                - listitem [ref=e22]:
+                  - link [ref=e23] [cursor=pointer]:
+                    - /url: /#projects
+                    - generic [ref=e24]: Work
+                - listitem [ref=e25]:
+                  - link [ref=e26] [cursor=pointer]:
+                    - /url: /#contact
+                    - generic [ref=e27]: Contact
+              - generic [ref=e28]:
+                - heading [level=3] [ref=e29]: Socials
+                - list [ref=e30]:
+                  - listitem [ref=e31]:
+                    - link [ref=e32] [cursor=pointer]:
+                      - /url: https://www.facebook.com/share/18dWrMFCZ2/?mibextid=wwXIfr
+                      - text: Facebook
+                  - listitem [ref=e33]:
+                    - link [ref=e34] [cursor=pointer]:
+                      - /url: https://www.tiktok.com/@aurea.tools?_r=1&_t=ZS-96IvsxPC6bo
+                      - text: TikTok
+    - main [ref=e35]:
+      - generic [ref=e37]:
+        - generic [ref=e38]: Selected work — 4 projects
+        - heading "Work that earns its place online." [level=1] [ref=e39]:
+          - text: Work that
+          - text: earns its place
+          - text: online.
+        - paragraph [ref=e40]: Commerce platforms, developer tools, creative marketplaces, and creator products. Each one built to look serious, perform well, and represent the brand behind it.
+      - generic [ref=e41]:
+        - article [ref=e42]:
+          - link "Visit Coppseries" [ref=e43] [cursor=pointer]:
+            - /url: https://coppseries.netlify.app/
+          - generic [ref=e45]:
+            - generic [ref=e46]: 01 /
+            - heading "Coppseries" [level=2] [ref=e47]
+            - paragraph [ref=e48]: An online video game store where users can browse, discover, and purchase games, consoles, accessories, and gaming-related products.
+            - generic [ref=e49]:
+              - generic [ref=e50]: Commerce
+              - generic [ref=e51]: Catalog
+            - link "Visit project" [ref=e52] [cursor=pointer]:
+              - /url: https://coppseries.netlify.app/
+              - text: Visit project
+              - generic [ref=e53]: ↗
+        - article [ref=e54]:
+          - link "Visit LeakScope" [ref=e55] [cursor=pointer]:
+            - /url: https://www.leakscope.tech/
+          - generic [ref=e57]:
+            - generic [ref=e58]: 02 /
+            - heading "LeakScope" [level=2] [ref=e59]
+            - paragraph [ref=e60]: A free black-box security scanner designed specifically for Supabase applications.
+            - generic [ref=e61]:
+              - generic [ref=e62]: Security
+              - generic [ref=e63]: Developer tool
+            - link "Visit project" [ref=e64] [cursor=pointer]:
+              - /url: https://www.leakscope.tech/
+              - text: Visit project
+              - generic [ref=e65]: ↗
+            - generic [ref=e66]: Live
+        - article [ref=e67]:
+          - link "Visit PhsarDesign" [ref=e68] [cursor=pointer]:
+            - /url: https://phsardesign.vercel.app/
+          - generic [ref=e70]:
+            - generic [ref=e71]: 03 /
+            - heading "PhsarDesign" [level=2] [ref=e72]
+            - paragraph [ref=e73]: Creative freelancing platform connecting local digital artists with clients.
+            - generic [ref=e74]:
+              - generic [ref=e75]: Marketplace
+              - generic [ref=e76]: Platform
+            - link "Visit project" [ref=e77] [cursor=pointer]:
+              - /url: https://phsardesign.vercel.app/
+              - text: Visit project
+              - generic [ref=e78]: ↗
+        - article [ref=e79]:
+          - link "Visit AUREA Tools" [ref=e80] [cursor=pointer]:
+            - /url: https://www.aurea.tools/
+          - generic [ref=e82]:
+            - generic [ref=e83]: 04 /
+            - heading "AUREA Tools" [level=2] [ref=e84]
+            - paragraph [ref=e85]: Platform helping creators and designers launch portfolio websites faster.
+            - generic [ref=e86]:
+              - generic [ref=e87]: Creator product
+              - generic [ref=e88]: Platform
+            - link "Visit project" [ref=e89] [cursor=pointer]:
+              - /url: https://www.aurea.tools/
+              - text: Visit project
+              - generic [ref=e90]: ↗
+      - generic [ref=e93]:
+        - generic [ref=e94]: (05) Start a project
+        - heading "Let's build something worth arriving at." [level=2] [ref=e95]
+        - link "prumsereyreaksa@gmail.com" [ref=e96] [cursor=pointer]:
+          - /url: mailto:prumsereyreaksa@gmail.com
+    - contentinfo [ref=e97]:
+      - generic [ref=e98]:
+        - generic [ref=e99]: © AUREA / 2026
+        - navigation "Footer navigation" [ref=e100]:
+          - link "Work" [ref=e101] [cursor=pointer]:
+            - /url: /#projects
+          - link "Studio" [ref=e102] [cursor=pointer]:
+            - /url: /about
+          - link "Contact" [ref=e103] [cursor=pointer]:
+            - /url: /#contact
+        - generic "Social links" [ref=e104]:
+          - link "AUREA Facebook" [ref=e105] [cursor=pointer]:
+            - /url: https://www.facebook.com/share/18dWrMFCZ2/?mibextid=wwXIfr
+            - img [ref=e106]
+          - link "AUREA TikTok" [ref=e108] [cursor=pointer]:
+            - /url: https://www.tiktok.com/@aurea.tools?_r=1&_t=ZS-96IvsxPC6bo
+            - img [ref=e109]
+  - generic [ref=e113]:
+    - button "Menu" [ref=e114]:
+      - img [ref=e116]
+      - generic: Menu
+    - button "Inspect" [ref=e120]:
+      - img [ref=e122]
+      - generic: Inspect
+    - button "Audit" [ref=e124]:
+      - img [ref=e126]
+      - generic: Audit
+    - button "Settings" [ref=e129]:
+      - img [ref=e131]
+      - generic: Settings

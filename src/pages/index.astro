@@ -1,24 +1,192 @@
 ---
-import PortfolioApp from '../components/PortfolioApp.jsx';
-import { loadPortfolioContent } from '../lib/portfolioContent.js';
+import Footer from '../components/site/Footer.astro';
+import Header from '../components/site/Header.astro';
+import HeroSection from '../components/site/HeroSection.jsx';
+import ProjectsGrid from '../components/site/ProjectsGrid.astro';
+import SmoothScroll from '../components/site/SmoothScroll.jsx';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import {
+  contactDetails,
+  homeHero,
+  philosophyStatements,
+  projects,
+  services,
+} from '../data/aurea.js';
 
-const { siteData, experience, education, projects, artwork, contactMethods } =
-  await loadPortfolioContent();
+const iconPaths = {
+  design:
+    'M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 1 1 3.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z',
+  code:
+    'M16 18l6-6-6-6M8 6l-6 6 6 6',
+  analytics:
+    'M18 20V10M12 20V4M6 20v-6',
+  automation:
+    'M13 10V3L4 14h7v7l9-11h-7z',
+};
 ---
 
-<BaseLayout title={siteData.site.title} description={siteData.site.description}>
-  <PortfolioApp
-    client:load
-    hero={siteData.hero}
-    about={siteData.about}
-    education={education}
-    experience={experience}
-    projectsSection={siteData['projects-section']}
-    projects={projects}
-    artworkSection={siteData['artwork-section']}
-    artwork={artwork}
-    contact={siteData.contact}
-    contactMethods={contactMethods}
-  />
+<BaseLayout
+  title="AUREA — Website Development Studio"
+  description="AUREA is a website development studio building digital presences that elevate business."
+  canonical="https://coppsary.com/"
+>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div class="site-shell">
+    <SmoothScroll client:load />
+    <Header pathname={Astro.url.pathname} />
+
+    <main id="main-content">
+      <HeroSection client:load hero={homeHero} />
+
+      <section id="studio" class="studio-section section-shell">
+        <div class="section-label">(01) Studio</div>
+        <h2 class="studio-section__headline">
+          Software that<br/>ships and scales.
+        </h2>
+        <p class="studio-section__copy">
+          AUREA is a software and web development studio. We work with
+          businesses that need platforms built properly — fast, maintainable,
+          and engineered to support growth from day one.
+        </p>
+      </section>
+
+      <section id="services" class="services-section section-shell">
+        <div class="section-heading">
+          <div class="section-label">(02) Services</div>
+          <div class="section-heading__content">
+            <p class="section-statement">What we offer.</p>
+          </div>
+        </div>
+
+        <div class="services-grid">
+          {services.map((service) => (
+            <article class="service-block">
+              <div class="service-block__rule" aria-hidden="true"></div>
+              <div class="service-block__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d={iconPaths[service.icon]}></path>
+                </svg>
+              </div>
+              <span class="service-block__index">{service.index}</span>
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <ProjectsGrid projects={projects} />
+
+      <section id="packages" class="packages-section section-shell">
+        <div class="section-heading">
+          <div class="section-label">(04) Capabilities</div>
+          <div class="section-heading__content">
+            <p class="section-statement">How we can help.</p>
+          </div>
+        </div>
+
+        <div class="capabilities">
+          <p class="capabilities__lead">
+            We design and build websites, platforms, and custom digital systems that feel clear, modern, scalable, and reliable — from fast marketing sites to fully tailored business software, even data analysis.
+          </p>
+
+          <ul class="capabilities__grid" role="list">
+            <li class="capability">
+              <span class="capability__index">01</span>
+              <h3 class="capability__title">Static sites</h3>
+              <p class="capability__copy">Lightweight, statically-generated sites that load instantly, stay reliable, and cost almost nothing to host — ideal for portfolios, landing pages, and brand presence.</p>
+            </li>
+            <li class="capability">
+              <span class="capability__index">02</span>
+              <h3 class="capability__title">Platforms &amp; products</h3>
+              <p class="capability__copy">Web platforms and internal tools engineered to scale — from prototype to production.</p>
+            </li>
+            <li class="capability">
+              <span class="capability__index">03</span>
+              <h3 class="capability__title">Custom systems</h3>
+              <p class="capability__copy">Bespoke digital systems shaped to your business — clear interfaces over real, reliable infrastructure.</p>
+            </li>
+            <li class="capability">
+              <span class="capability__index">04</span>
+              <h3 class="capability__title">Data &amp; analysis</h3>
+              <p class="capability__copy">Pipelines, dashboards, and analysis that turn raw data into decisions you can act on.</p>
+            </li>
+          </ul>
+
+          <div class="capabilities__cta">
+            <div class="capabilities__cta-copy">
+              <p class="capabilities__cta-eyebrow">Start a project</p>
+              <p class="capabilities__cta-headline">
+                Want a website redesigned, built from scratch, or a custom digital system? Get in touch.
+              </p>
+            </div>
+            <div class="capabilities__cta-links">
+              <a href={contactDetails.telegram} target="_blank" rel="noreferrer" class="capabilities__cta-link">
+                <span class="capabilities__cta-label">Telegram</span>
+                <span class="capabilities__cta-value">{contactDetails.telegramLabel}</span>
+              </a>
+              <a href={contactDetails.email} class="capabilities__cta-link">
+                <span class="capabilities__cta-label">Email</span>
+                <span class="capabilities__cta-value">{contactDetails.emailLabel}</span>
+              </a>
+              <a href={contactDetails.phone} class="capabilities__cta-link">
+                <span class="capabilities__cta-label">Phone</span>
+                <span class="capabilities__cta-value">{contactDetails.phoneLabel}</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="philosophy-section section-shell">
+        <div class="section-heading philosophy-heading">
+          <div class="section-label">(05) Philosophy</div>
+          <div class="section-heading__content">
+            <p class="section-statement">Statements that shape how we build.</p>
+          </div>
+        </div>
+
+        <div class="philosophy-stack">
+          {philosophyStatements.map((statement, index) => (
+            <article class={`philosophy-card philosophy-card--${(index % 2) + 1}`} style={`--stack-index:${index};`}>
+              <div class="section-label section-label--poster">(0{index + 1})</div>
+              <div class="philosophy-card__rule" aria-hidden="true"></div>
+              <h2>{statement.text}</h2>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="contact" class="contact-section">
+        <div class="contact-section__dot" aria-hidden="true"></div>
+        <div class="contact-section__content">
+          <div class="section-label section-label--dark">(06) Contact</div>
+          <h2>{contactDetails.headline}</h2>
+          <div class="contact-section__links" aria-label="Direct contact links">
+            <a href={contactDetails.email} class="contact-section__link">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 6h16v12H4z"></path>
+                <path d="m4 7 8 6 8-6"></path>
+              </svg>
+              {contactDetails.emailLabel}
+            </a>
+            <a href={contactDetails.telegram} target="_blank" rel="noreferrer" class="contact-section__link">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                <path d="M21.4 4.6c.3-.9-.6-1.7-1.5-1.4L3.8 9.4c-1 .4-1 1.8.1 2.1l4.1 1.3 1.6 5c.3 1 1.6 1.1 2.1.2l2.3-3.2 4.4 3.3c.8.6 1.9.2 2.1-.8l.9-12.7ZM9.1 12.1l8.4-5.2-6.9 6.7-.3 2.7-1.2-4.2Z"></path>
+              </svg>
+              {contactDetails.telegramLabel}
+            </a>
+            <a href={contactDetails.phone} class="contact-section__link">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7l.5 3a2 2 0 0 1-.6 1.8l-1.3 1.3a16 16 0 0 0 6.4 6.4l1.3-1.3a2 2 0 0 1 1.8-.6l3 .5A2 2 0 0 1 22 16.9z"></path>
+              </svg>
+              {contactDetails.phoneLabel}
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </div>
 </BaseLayout>
