@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import VariableProximity from '../animation/VariableProximity.jsx';
 
 export default function HeroSection({ hero }) {
@@ -8,6 +8,7 @@ export default function HeroSection({ hero }) {
   const textRef = useRef(null);
   const wordmarkRef = useRef(null);
   const titleLines = hero.title.split('\n');
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -15,6 +16,11 @@ export default function HeroSection({ hero }) {
     const text = textRef.current;
     const wordmark = wordmarkRef.current;
     if (!section || !media || !text) return;
+    const isCoarsePointer =
+      typeof window !== 'undefined' &&
+      window.matchMedia &&
+      window.matchMedia('(pointer: coarse)').matches;
+    const enableSnap = !isCoarsePointer && (window.innerWidth || 0) > 820;
 
     let raf = 0;
     let pending = false;
@@ -120,17 +126,32 @@ export default function HeroSection({ hero }) {
     update();
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll);
-    window.addEventListener('wheel', onWheel, { passive: true });
-    window.addEventListener('touchstart', onTouchStart, { passive: true });
-    window.addEventListener('touchmove', onTouchMove, { passive: true });
+    if (enableSnap) {
+      window.addEventListener('wheel', onWheel, { passive: true });
+      window.addEventListener('touchstart', onTouchStart, { passive: true });
+      window.addEventListener('touchmove', onTouchMove, { passive: true });
+    }
     return () => {
       cancelAnimationFrame(raf);
       window.removeEventListener('scroll', onScroll);
       window.removeEventListener('resize', onScroll);
-      window.removeEventListener('wheel', onWheel);
-      window.removeEventListener('touchstart', onTouchStart);
-      window.removeEventListener('touchmove', onTouchMove);
+      if (enableSnap) {
+        window.removeEventListener('wheel', onWheel);
+        window.removeEventListener('touchstart', onTouchStart);
+        window.removeEventListener('touchmove', onTouchMove);
+      }
     };
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === 'undefined' || !window.matchMedia) return;
+    const query = window.matchMedia('(max-width: 640px)');
+    const setMobile = () => {
+      setIsMobile(query.matches);
+    };
+    setMobile();
+    query.addEventListener('change', setMobile);
+    return () => query.removeEventListener('change', setMobile);
   }, []);
 
   return (
@@ -174,13 +195,17 @@ export default function HeroSection({ hero }) {
               style={{ userSelect: 'text', cursor: 'default' }}
             >
               {titleLines.map((line, i) => (
-                <span key={i} style={{ display: 'block' }}>
+                <span key={i} className="hero-vp-title__line">
                   <VariableProximity
                     label={line}
                     fromFontVariationSettings="'wght' 300, 'wdth' 100"
-                    toFontVariationSettings="'wght' 900, 'wdth' 125"
+                    toFontVariationSettings={
+                      isMobile
+                        ? "'wght' 760, 'wdth' 105"
+                        : "'wght' 900, 'wdth' 125"
+                    }
                     containerRef={containerRef}
-                    radius={220}
+                    radius={isMobile ? 120 : 220}
                     falloff="gaussian"
                     style={{ fontSize: 'inherit', lineHeight: 'inherit', letterSpacing: 'inherit' }}
                   />

@@ -213,27 +213,27 @@ export const contactDetails = {
 export const teamMembers = [
   {
     name: 'Kao Sodavann',
-    role: 'Founder',
+    role: 'Software Developer',
     image: '/AUREA-TEAM/Sodavann.jpg',
-    description: 'Leading the studio\'s technical direction and product strategy, bridging engineering decisions with real business outcomes.',
+    description: 'Creating functional applications by combining problem-solving, system logic, and efficient development practices.',
   },
   {
     name: 'Prom Sereyreaksa',
-    role: 'Co-Founder',
+    role: 'Software Developer',
     image: '/AUREA-TEAM/Sereyreaksa.jpg',
-    description: 'Full-stack engineer focused on building reliable, scalable systems — from architecture decisions to shipping working software.',
-  },
-  {
-    name: 'Chea Ilong',
-    role: 'Backend Developer',
-    image: '/AUREA-TEAM/Ilong.jpg',
-    description: 'Building the server-side infrastructure, APIs, and data systems that keep platforms fast and dependable at scale.',
+    description: 'Designing and building software solutions across frontend, backend, and system workflows — turning ideas into reliable, functional products.',
   },
   {
     name: 'Kosal Sophanith',
     role: 'Frontend Developer',
     image: '/AUREA-TEAM/Sophanith.jpg',
     description: 'Engineering the client side — responsive interfaces, component systems, and performance-optimised web experiences.',
+  },
+  {
+    name: 'Chea Ilong',
+    role: 'Backend Developer',
+    image: '/AUREA-TEAM/Ilong.jpg',
+    description: 'Building the server-side infrastructure, APIs, and data systems that keep platforms fast and dependable at scale.',
   },
   {
     name: 'Huy Visa',
